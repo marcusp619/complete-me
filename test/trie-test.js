@@ -18,23 +18,29 @@ describe('Trie', () => {
     expect(trie.head).to.eq(null);
   });
 
+  it('should set its default count to 0 ', () => {
+    expect(trie.total).to.eq(0);
+  });
+
   describe('insert', () => {
+    let trie;
+
+    beforeEach(() => {
+      trie = new Trie();
+    });
+
     it('should take in a word as an argument', () => {
       assert.equal(trie.insert('hey'));
     });
-    it('should change all words into lowercase', () => {
-      assert.equal(trie.insert('hey'), ['h', 'e', 'y']);
-    });
-    it.skip('should take the word and make an array', () => {
 
+    it('should add to the count for each word', () => {
+      let trie2 = new Trie();
+
+      trie2.insert('hey');
+      trie2.insert('hello');
+      trie2.insert('hey');
+      assert.equal(trie2.count(), 2);
     });
 
   });
 });
-
-  // insert method
-    //take a word
-    //lowercase it
-    //split the word into letters
-    //if letter is not node create a node and then shift off first letter
-    //the letter is a node skip and check next one
