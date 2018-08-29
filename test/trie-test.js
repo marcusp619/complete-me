@@ -1,7 +1,7 @@
 import { assert, expect } from 'chai';
 import Trie from '../lib/Trie';
 import Node from '../lib/Node';
-
+import fs from 'fs';
 
 describe('Trie', () => {
   let trie;
@@ -40,40 +40,45 @@ describe('Trie', () => {
       trie2.insert('hello');
       assert.equal(trie2.count(), 2);
     });
+  });  
 
-    describe('count method', () => {
-      let trie;
+  describe('count method', () => {
+    let trie;
 
-      beforeEach(() => {
-        trie = new Trie();
-      });
-
-      it('should return the count', () => {
-        assert.equal(trie.count(), 0);
-      });
-
-      it('count should increment by 1 each time a word is passed', () => {
-        trie.insert('hey');
-        assert.equal(trie.count(), 1);
-      });
+    beforeEach(() => {
+      trie = new Trie();
     });
 
-    describe('suggest method', () => {
-      let trie;
-
-      beforeEach(() => {
-        trie = new Trie();
-      });
-
-      describe('populate method', () => {
-        let trie;
-  
-        beforeEach(() => {
-          trie = new Trie();
-        });
-
-      
+    it('should return the count', () => {
+      assert.equal(trie.count(), 0);
     });
 
+    it('count should increment by 1 each time a word is passed', () => {
+      trie.insert('hey');
+      assert.equal(trie.count(), 1);
+    });
   });
+
+  describe('suggest method', () => {
+    let trie;
+
+    beforeEach(() => {
+      trie = new Trie();
+    });
+  });
+
+  describe('populate method', () => {
+    let trie;
+
+    beforeEach(() => {
+      trie = new Trie();
+    });
+
+    it('should take a dictionary as a parameter', () => {
+      let dictionary = fs;
+
+      assert.isFunction(trie.populate);
+    });
+  });
+  
 });
