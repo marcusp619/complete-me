@@ -68,16 +68,28 @@ describe('Trie', () => {
   });
 
   describe('populate method', () => {
+    
+    
     let trie;
 
     beforeEach(() => {
       trie = new Trie();
     });
 
-    it('should take a dictionary as a parameter', () => {
-      let dictionary = fs;
+    it('should be a function', () => {
+      
 
       assert.isFunction(trie.populate);
+    });
+
+    it('should take in a parameter of dictionary', () => {
+      const text = "/usr/share/dict/words";
+      const dictionary = fs.readFileSync(text).toString().trim().split('\n');
+      const prefixTrie = new Trie();
+      
+      prefixTrie.populate(dictionary);
+      
+      expect(prefixTrie.total).to.eq(235886);
     });
   });
   
