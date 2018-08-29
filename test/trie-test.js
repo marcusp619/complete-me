@@ -65,6 +65,13 @@ describe('Trie', () => {
         trie = new Trie();
       });
 
+      describe('populate method', () => {
+        let trie;
+  
+        beforeEach(() => {
+          trie = new Trie();
+        });
+
       
     });
 
