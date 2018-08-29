@@ -59,26 +59,14 @@ describe('Trie', () => {
     });
   });
 
-  describe('suggest method', () => {
-    let trie;
-
-    beforeEach(() => {
-      trie = new Trie();
-    });
-  });
-
-  describe('populate method', () => {
-    
-    
+  describe('populate method', () => {  
     let trie;
 
     beforeEach(() => {
       trie = new Trie();
     });
 
-    it('should be a function', () => {
-      
-
+    it('should be a function', () => { 
       assert.isFunction(trie.populate);
     });
 
@@ -92,5 +80,17 @@ describe('Trie', () => {
       expect(prefixTrie.total).to.eq(235886);
     });
   });
-  
+
+  describe('suggest method', () => {
+    let trie;
+
+    beforeEach(() => {
+      trie = new Trie();
+    });
+
+    it('should be a function', () => {
+      assert.isFunction(trie.suggest);
+    });
+
+  });
 });
