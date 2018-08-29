@@ -22,7 +22,7 @@ describe('Trie', () => {
     expect(trie.total).to.eq(0);
   });
 
-  describe('insert', () => {
+  describe('insert method', () => {
     let trie;
 
     beforeEach(() => {
@@ -41,7 +41,7 @@ describe('Trie', () => {
       assert.equal(trie2.count(), 2);
     });
 
-    describe('count', () => {
+    describe('count method', () => {
       let trie;
 
       beforeEach(() => {
@@ -56,6 +56,16 @@ describe('Trie', () => {
         trie.insert('hey');
         assert.equal(trie.count(), 1);
       });
+    });
+
+    describe('suggest method', () => {
+      let trie;
+
+      beforeEach(() => {
+        trie = new Trie();
+      });
+
+      
     });
 
   });
