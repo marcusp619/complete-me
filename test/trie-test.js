@@ -38,8 +38,24 @@ describe('Trie', () => {
 
       trie2.insert('hey');
       trie2.insert('hello');
-      trie2.insert('hey');
       assert.equal(trie2.count(), 2);
+    });
+
+    describe('count', () => {
+      let trie;
+
+      beforeEach(() => {
+        trie = new Trie();
+      });
+
+      it('should return the count', () => {
+        assert.equal(trie.count(), 0);
+      });
+
+      it('count should increment by 1 each time a word is passed', () => {
+        trie.insert('hey');
+        assert.equal(trie.count(), 1);
+      });
     });
 
   });
